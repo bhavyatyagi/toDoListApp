@@ -1,3 +1,150 @@
+*{
+    font-family: 'montserrat',sans-serif;
+    margin:0;
+    transition: all 0.4s;
+}
+body{
+    
+    box-sizing: border-box;
+}
 #heading h1{
     text-align: center;
+    border-bottom: 2px solid darkslategray;
+}
+
+/* main display section  */
+.main-display{
+    padding: 2% 0;
+    width: 50%;
+    position: absolute;
+    left: 25%;
+    background-color: rgb(243, 243, 243);
+    top: 10%;
+    box-shadow: 1px 1px 5px 2px silver;
+}
+.main-display:hover{
+    box-shadow: none;
+}
+
+/* description section  */
+#description{
+    margin: 2% 0 5% 5%;
+    width: 90%;
+    height: 50px;
+    border-bottom: 2px solid darkslategray;
+
+}
+#description:hover{
+    box-shadow: 1px 1px 5px 2px silver;
+
+}
+#description input{
+    caret-color: rgb(83, 182, 182);
+    width:100%;
+    padding: 4px 6px;
+    border: none;
+    outline: none;
+    background: none;
+    margin: 7px 0 0 0;
+}
+#description h5{
+    float: left;
+    margin-left: 7px;
+}
+
+/* info section  */
+#info{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2% 0 5% 5%;
+    border-bottom: 2px solid darkslategray;
+    width: 90%;
+}
+#info div{
+    padding: 0 8px;
+    width: 43%;
+    height: 50px;
+}
+#info div:hover{
+    box-shadow: 1px 1px 5px 2px silver;
+}
+#info input{
+    outline: none;
+    border: none;
+    width: 100%;
+    background: none;
+    margin-top: 5px;
+}
+#info select{
+    border: none;
+    outline: none;
+    width: 100%;
+    background: none;
+    margin-top: 5px;
+}
+
+/* buttons section  */
+#buttons{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2% 0 5% 0;
+    padding: 4% 8%;
+}
+#buttons h4{
+    display: inline-block;
+}
+#buttons i{
+    margin: 0 2px;
+}
+#buttons button{
+    border: none;
+    box-shadow: 1px 1px 5px 4px silver;
+    color: white;
+    padding: 0 15px;
+    outline: transparent;
+    padding: 3% 3%;
+
+}
+#buttons button:hover{
+    transform: scale(1.05);
+}
+#delete-button{
+    background-color: red;
+    transition: all .1s;
+}
+#delete-button:hover{
+    background-color: white;
+    color: red;
+}
+#add-button{
+    background-color: darkslategray;
+    transition: all .1s;
+}
+#add-button:hover{
+    background-color: white;
+    color: darkslategray;
+}
+
+
+/* cards section  */
+.cards{
+    border-top: 2px solid darkslategray;
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 5px;
+}
+#card-details1{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 5px 0 0;
+}
+#card-details2{
+    position: relative;
+    left: 20%;
+    margin-top: 5px;
+}
+#category-display{
+    background: red;
+    color: white;
+    padding: 5px;
 }
