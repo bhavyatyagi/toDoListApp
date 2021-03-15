@@ -1,19 +1,23 @@
-*{
-    font-family: 'montserrat',sans-serif;
-    margin:0;
+/* General CSS */
+* {
+    font-family: 'montserrat', sans-serif;
+    margin: 0;
     transition: all 0.4s;
 }
-body{
-    
+
+body {
+
     box-sizing: border-box;
 }
-#heading h1{
+
+/* Heading  */
+#heading h1 {
     text-align: center;
     border-bottom: 2px solid darkslategray;
 }
 
 /* main display section  */
-.main-display{
+.main-display {
     padding: 2% 0;
     width: 50%;
     position: absolute;
@@ -22,60 +26,68 @@ body{
     top: 10%;
     box-shadow: 1px 1px 5px 2px silver;
 }
-.main-display:hover{
+
+.main-display:hover {
     box-shadow: none;
 }
 
 /* description section  */
-#description{
+#description {
     margin: 2% 0 5% 5%;
     width: 90%;
     height: 50px;
     border-bottom: 2px solid darkslategray;
 
 }
-#description:hover{
+
+#description:hover {
     box-shadow: 1px 1px 5px 2px silver;
 
 }
-#description input{
+
+#description input {
     caret-color: rgb(83, 182, 182);
-    width:100%;
+    width: 100%;
     padding: 4px 6px;
     border: none;
     outline: none;
     background: none;
     margin: 7px 0 0 0;
 }
-#description h5{
+
+#description h5 {
     float: left;
     margin-left: 7px;
 }
 
 /* info section  */
-#info{
+#info {
     display: flex;
     justify-content: space-evenly;
     margin: 2% 0 5% 5%;
     border-bottom: 2px solid darkslategray;
     width: 90%;
 }
-#info div{
+
+#info div {
     padding: 0 8px;
     width: 43%;
     height: 50px;
 }
-#info div:hover{
+
+#info div:hover {
     box-shadow: 1px 1px 5px 2px silver;
 }
-#info input{
+
+#info input {
     outline: none;
     border: none;
     width: 100%;
     background: none;
     margin-top: 5px;
 }
-#info select{
+
+#info select {
     border: none;
     outline: none;
     width: 100%;
@@ -83,20 +95,29 @@ body{
     margin-top: 5px;
 }
 
+input.checkboxes {
+    margin-top: 5px;
+    background: #3d404e;
+    border: #7f83a2 1px solid;
+}
+
 /* buttons section  */
-#buttons{
+#buttons {
     display: flex;
     justify-content: space-evenly;
     margin: 2% 0 5% 0;
     padding: 4% 8%;
 }
-#buttons h4{
+
+#buttons h4 {
     display: inline-block;
 }
-#buttons i{
+
+#buttons i {
     margin: 0 2px;
 }
-#buttons button{
+
+#buttons button {
     border: none;
     box-shadow: 1px 1px 5px 4px silver;
     color: white;
@@ -105,45 +126,86 @@ body{
     padding: 3% 3%;
 
 }
-#buttons button:hover{
+
+#buttons button:hover {
     transform: scale(1.05);
 }
-#delete-button{
+
+#delete-button {
     background-color: red;
     transition: all .1s;
+    padding: 15px !important;
 }
-#delete-button:hover{
+
+#delete-button:hover {
     background-color: white;
     color: red;
 }
-#add-button{
+
+#add-button {
     background-color: darkslategray;
     transition: all .1s;
 }
-#add-button:hover{
+
+#add-button:hover {
     background-color: white;
     color: darkslategray;
 }
 
 
 /* cards section  */
-.cards{
+.cards {
     border-top: 2px solid darkslategray;
     width: 90%;
     margin-left: 5%;
     margin-bottom: 5px;
+    background: rgb(197, 228, 230);
 }
-#card-details1{
+
+#card-details1 {
+    padding: 1% 2%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    align-items: stretch;
     margin: 5px 0 0;
 }
-#card-details2{
-    position: relative;
-    left: 20%;
-    margin-top: 5px;
+
+#card-details1 h4 {
+    position: absolute;
+    left: 11%;
+    color: whitblacke;
+    box-shadow: -1px 1px 1px 1px darkslategray;
+    padding: 2px 5px;
+    width: 60%;
+    height: 22px;
+    overflow-y: scroll;
+    font-family: cursive;
 }
-#category-display{
+
+#card-details1 h4::-webkit-scrollbar {
+    display: none;
+}
+
+#card-details2 {
+    position: relative;
+    left: 2%;
+    margin-top: 2px;
+    padding-bottom: 5px;
+}
+
+#card-details2 i {
+    margin-right: 5px;
+}
+
+#card-details2 span {
+    background: darkslategray;
+    color: white;
+    padding: 2px 5px;
+    margin-left: 2px;
+    ;
+}
+
+#category-display {
     background: red;
     color: white;
     padding: 5px;

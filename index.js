@@ -1,30 +1,38 @@
 // Installed and required modules 
-const express=require('express');
+const express = require('express');
 var bodyParser = require('body-parser');
 // databse config 
-const db=require('./config/mongoose');
-const ToDoList=require('./models/toDoList');
+const db = require('./config/mongoose');
+const ToDoList = require('./models/toDoList');
 var jsdom = require('jsdom');
 $ = require('jquery')(new jsdom.JSDOM().window);
-const app=express();
+const app = express();
 
 // Port 
-const port=786;
+const port = 786;
 
- //inbuilt node module doesnt require installation
-const path=require('path');
-const { request } = require('http');
-const { response } = require('express');
+//inbuilt node module doesnt require installation
+const path = require('path');
+const {
+    request
+} = require('http');
+const {
+    response
+} = require('express');
 const Contact = require('../contactListProject/models/contact');
-const { isArray } = require('jquery');
+const {
+    isArray
+} = require('jquery');
 
 
 // Setting up views and view engine 
-app.set('view engine','ejs');
-app.set('views',path.join(__dirname,'views'));
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 app.set(express.urlencoded());
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 
 // parse application/json
 app.use(bodyParser.json());
@@ -32,64 +40,56 @@ app.use(bodyParser.json());
 app.use(express.static('assets'));
 
 // sending a response to home 
-app.get('/',function(request,response){
+app.get('/', function (request, response) {
 
-    ToDoList.find({},function(error,toDoList)
-    {
-        if(error)
-        {
+    ToDoList.find({}, function (error, toDoList) {
+        if (error) {
             console.log('Error in fetching ToDoLists from DB');
             return;
         }
-        return response.render('home',{
+        return response.render('home', {
             title: 'To Do App',
             toDoList: toDoList
-         });
+        });
     })
 });
 
 // creating list cards 
-app.post('/create-card',function(request,response)
-{
+app.post('/create-card', function (request, response) {
     ToDoList.create({
-        description:request.body.description,
-        category:request.body.category,
-        date:request.body.date
-    },function(error,newList)
-    {
-        if(error)
-        {
+        description: request.body.description,
+        category: request.body.category,
+        date: request.body.date
+    }, function (error, newList) {
+        if (error) {
             console.log('Error in creating card in DB');
             return;
         }
-        console.log('*********',newList);
+        console.log('*********', newList);
         return response.redirect('back');
     });
 });
 
-isArrayy = function(a) {
+
+isArrayy = function (a) {
     return (!!a) && (a.constructor === Array);
 };
-app.get('/delete-card/',function(request,response){
-    
-    let itemsToBeDeleted=new Array();
-    if(isArrayy(request.query.check)==false)
-    {
-    ToDoList.findByIdAndDelete(request.query.check,function(error){
-        if(error){
-            console.log('Error in deleting lists/cards from DB');
-            return;
-        }
-        return response.redirect('back');
-    });
-    }
-    else
-    {
-        itemsToBeDeleted=request.query.check;
-        for(let i=0;i<itemsToBeDeleted.length;i++)
-        {
-            ToDoList.findByIdAndDelete(itemsToBeDeleted[i],function(error){
-                if(error){
+app.get('/delete-card/', function (request, response) {
+
+    let itemsToBeDeleted = new Array();
+    if (isArrayy(request.query.check) == false) {
+        ToDoList.findByIdAndDelete(request.query.check, function (error) {
+            if (error) {
+                console.log('Error in deleting lists/cards from DB');
+                return;
+            }
+            return response.redirect('back');
+        });
+    } else {
+        itemsToBeDeleted = request.query.check;
+        for (let i = 0; i < itemsToBeDeleted.length; i++) {
+            ToDoList.findByIdAndDelete(itemsToBeDeleted[i], function (error) {
+                if (error) {
                     console.log('Error in deleting lists/cards from DB');
                     return;
                 }
@@ -101,9 +101,8 @@ app.get('/delete-card/',function(request,response){
 
 
 // App Listening on pre-selected port number 
-app.listen(port,function(error){
-    if(error)
-    {
+app.listen(port, function (error) {
+    if (error) {
         console.log(`Error building server: ${error}`);
         return;
     }
