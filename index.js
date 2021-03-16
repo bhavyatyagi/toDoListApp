@@ -4,12 +4,10 @@ var bodyParser = require('body-parser');
 // databse config 
 const db = require('./config/mongoose');
 const ToDoList = require('./models/toDoList');
-var jsdom = require('jsdom');
-$ = require('jquery')(new jsdom.JSDOM().window);
 const app = express();
 
 // Port 
-const port = 786;
+const port = 8080;
 
 //inbuilt node module doesnt require installation
 const path = require('path');
@@ -56,6 +54,11 @@ app.get('/', function (request, response) {
 
 // creating list cards 
 app.post('/create-card', function (request, response) {
+
+    // If no deadlinesare given 
+    if (request.body.date == "")
+        request.body.date = "No Deadlines";
+
     ToDoList.create({
         description: request.body.description,
         category: request.body.category,
@@ -70,12 +73,13 @@ app.post('/create-card', function (request, response) {
     });
 });
 
-
+// to check if the response incming is a list or just a single element 
 isArrayy = function (a) {
     return (!!a) && (a.constructor === Array);
 };
 app.get('/delete-card/', function (request, response) {
 
+    // if only single item to be deleted 
     let itemsToBeDeleted = new Array();
     if (isArrayy(request.query.check) == false) {
         ToDoList.findByIdAndDelete(request.query.check, function (error) {
@@ -85,7 +89,9 @@ app.get('/delete-card/', function (request, response) {
             }
             return response.redirect('back');
         });
-    } else {
+    }
+    // multiple items to be deleted 
+    else {
         itemsToBeDeleted = request.query.check;
         for (let i = 0; i < itemsToBeDeleted.length; i++) {
             ToDoList.findByIdAndDelete(itemsToBeDeleted[i], function (error) {

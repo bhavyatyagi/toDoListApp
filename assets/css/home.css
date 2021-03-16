@@ -6,7 +6,9 @@
 }
 
 body {
+    background-image: url(https://images.pexels.com/photos/5717479/pexels-photo-5717479.jpeg?auto=compress&cs=tinysrgb&h=650&w=940);
 
+    background-size: 100% 100%;
     box-sizing: border-box;
 }
 
@@ -24,7 +26,7 @@ body {
     left: 25%;
     background-color: rgb(243, 243, 243);
     top: 10%;
-    box-shadow: 1px 1px 5px 2px silver;
+    box-shadow: 1px 1px 7px 4px silver;
 }
 
 .main-display:hover {
@@ -99,6 +101,16 @@ input.checkboxes {
     margin-top: 5px;
     background: #3d404e;
     border: #7f83a2 1px solid;
+}
+
+input.checkboxes:checked+h4 {
+    color: grey;
+    text-decoration: line-through;
+}
+
+input.checkboxes:checked+h4+p {
+    color: grey;
+    text-decoration: line-through;
 }
 
 /* buttons section  */
@@ -194,15 +206,15 @@ input.checkboxes {
 }
 
 #card-details2 i {
-    margin-right: 5px;
+
+    color: grey;
+
 }
 
 #card-details2 span {
-    background: darkslategray;
-    color: white;
+    /* background: darkslategray; */
+    color: grey;
     padding: 2px 5px;
-    margin-left: 2px;
-    ;
 }
 
 #category-display {

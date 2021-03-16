@@ -50,7 +50,7 @@
                     <h5>
                         DUE DATE
                     </h5>
-                    <input type="date" name="date" required>
+                    <input type="date" name="date">
                 </div>
             </div>
             <!-- buttons section  -->
@@ -75,7 +75,7 @@
         <%for(let i of toDoList){%>
         <div class="cards">
             <div id="card-details1">
-                <input type="checkbox" value="<%= i._id %>" name="check" class="checkboxes">
+                <input type="checkbox" value="<%= i._id %>" name="check" class="checkboxes" onclick="changeStyle()">
                 <h4><%= i.description %></h4>
                 <%if(i.category=="Work"){%>
                 <p style="background-color: black;" id="category-display"><%=i.category%></p>
@@ -91,7 +91,7 @@
                     </div>
                     <div id="card-details2">
                         <i class="fas fa-calendar-alt"></i>
-                        <span><%= i.date %></span>
+                        <span id="date-display"><%= i.date %></span>
             </div>
         </div>
         <%}%>
