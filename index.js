@@ -15,7 +15,6 @@ const port = 786;
 const path = require('path');
 const { request } = require('http');
 const { response } = require('express');
-const Contact = require('../contactListProject/models/contact');
 const { isArray } = require('jquery');
 
 
