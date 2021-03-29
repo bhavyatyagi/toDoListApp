@@ -107,7 +107,7 @@ app.get('/delete-card/', function (request, response) {
 
 
 // App Listening on pre-selected port number 
-app.listen(port, function (error) {
+app.listen(process.env.PORT || port, function (error) {
     if (error) {
         console.log(`Error building server: ${error}`);
         return;
