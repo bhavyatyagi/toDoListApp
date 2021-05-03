@@ -16,7 +16,7 @@ const todolistSchema = new mongoose.Schema({
     }
 });
 
-// making an instance so that we can use it later 
+// making an instance/model and letting mongoose know so that we can use it later 
 const ToDoList = mongoose.model('ToDoList', todolistSchema);
 
 // exporting
