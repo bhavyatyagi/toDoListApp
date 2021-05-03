@@ -1,11 +1,14 @@
 # To Do List App
 
-A nice project with a nice description
+This web based application helps you remember your day to day chores. A to do list has a Psychological effect on human being that helps them organise and complete their things on time.
 
 ---
 ## Requirements
 
-For development, you will only need Node.js and a node global package, Yarn, installed in your environement.
+For development, the tech-stack used are HTML5, CSS, javaScript and Node.js. 
+
+## Screenshots
+
 
 ### Node
 - #### Node installation on Windows
@@ -36,31 +39,31 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
     $ npm install npm -g
 
 ###
-### Yarn installation
-  After installing node, this project will need yarn too, so just run the following command.
+### Dependencies
+  After installing node, this project will need some dependecies too, so just run the following command.
 
-      $ npm install -g yarn
+      $ npm install 
 
 ---
 
 ## Install
 
-    $ git clone https://github.com/YOUR_USERNAME/PROJECT_TITLE
-    $ cd PROJECT_TITLE
-    $ yarn install
+    $ git clone https://github.com/bhavyatyagi/toDoListApp.git
+    $ cd toDoList
+    $ npm install
 
 ## Configure app
 
-Open `a/nice/path/to/a.file` then edit it with your settings. You will need:
-
-- A setting;
-- Another setting;
-- One more setting;
+- Make sure your MongoDB database server is running
 
 ## Running the project
 
-    $ yarn start
+    $ npm start
+ 
+ - This should make your app available on port 8080.
 
 ## Simple build for production
 
-    $ yarn build
+    $ npm build 
+    
+   -  This would require MongoAtlas
