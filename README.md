@@ -8,7 +8,7 @@ This web based application helps you remember your day to day chores. A to do li
 For development, the tech-stack used are HTML5, CSS, javaScript and Node.js. 
 
 ## Screenshots
-
+![To Do List Home](https://i.ibb.co/MsKHgWb/todolist.jpg)
 
 ### Node
 - #### Node installation on Windows
@@ -39,18 +39,18 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
     $ npm install npm -g
 
 ###
-### Dependencies
-  After installing node, this project will need some dependecies too, so just run the following command.
-
-      $ npm install 
-
 ---
 
-## Install
+## Download & Install
 
     $ git clone https://github.com/bhavyatyagi/toDoListApp.git
     $ cd toDoList
     $ npm install
+
+## Dependencies
+  After installing node, this project will need some dependecies too, so just run the following command.
+
+      $ npm install 
 
 ## Configure app
 
@@ -66,4 +66,4 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
     $ npm build 
     
-   -  This would require MongoAtlas
+   -  This would require MongoAtlas.
