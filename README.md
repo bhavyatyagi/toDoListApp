@@ -1,6 +1,6 @@
 # To Do List App
 
-This web based application helps you remember your day to day chores. A to do list has a Psychological effect on human being that helps them organise and complete their things on time.
+This web-based application helps you remember your day to day chores. A to-do list has a Psychological effect on a human being that helps them organise and complete their things on time.
 
 ---
 ## Requirements
