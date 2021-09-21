@@ -3,6 +3,7 @@ const express = require('express');
 var bodyParser = require('body-parser');
 // databse config 
 const db = require('./config/mongoose');
+const DB = 'mongodb+srv://bhavya2654:Bhavya@161201@cluster0.pffrg.mongodb.net/toDoList?retryWrites=true&w=majority';
 const ToDoList = require('./models/toDoList');
 const app = express();
 
