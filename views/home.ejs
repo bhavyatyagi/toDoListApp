@@ -1,38 +1,44 @@
 <html>
-    <head>
-        <title>
-            <%= title %>
-        </title>
 
-        <!-- viewport  -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- FontAwesome script  -->
-        <script src="https://kit.fontawesome.com/49a924637f.js" crossorigin="anonymous"></script>
-        <!-- jquery -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-        <!-- linking our CSS at the end to override changes -->
-        <link rel="stylesheet" href="./css/home.css">
-    </head>
+<head>
+    <title>
+        <%= title %>
+    </title>
 
-    <body>
-        <div class="main-display">
-            <form action="/create-card" method="POST">
+    <!-- viewport  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FontAwesome script  -->
+    <script src="https://kit.fontawesome.com/49a924637f.js" crossorigin="anonymous"></script>
+    <!-- jquery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <!-- linking our CSS at the end to override changes -->
+    <link rel="stylesheet" href="./css/home.css">
+</head>
+
+<body>
+    <!-- Main Display Section  -->
+    <div class="main-display">
+        <!-- Form 1 for adding lists  -->
+        <form action="/create-card" method="POST">
+            <!-- Heading  -->
             <div id="heading">
                 <h1>TO DO APP</h1>
             </div>
+            <!-- description Section  -->
             <div id="description">
                 <h5>
                     DESCRIPTION
                 </h5>
                 <input required name="description" placeholder="What are you upto?" type="text" id="description-input">
             </div>
+            <!-- Info section  -->
             <div id="info">
                 <div id="category">
                     <h5>
                         CATEGORY
                     </h5>
-                    <select required name="category" id="">
-                        <option value="null">Choose a Category</option>
+                    <select name="category" required>
+                        <option value="">Choose a Category</option>
                         <option value="Personal">Personal</option>
                         <option value="Work">Work</option>
                         <option value="School">School</option>
@@ -44,53 +50,51 @@
                     <h5>
                         DUE DATE
                     </h5>
-                    <input type="date" name="date" required>
+                    <input type="date" name="date">
                 </div>
             </div>
-        
+            <!-- buttons section  -->
             <div id="buttons">
-              
-                    <button type="submit" id="add-button">
-                        <i class="fas fa-plus-square"></i>
-                        <h4>ADD TASK</h4>
-                    </button>
-                </form>
-                
-                <form action="/delete-card/?" method="GET">
-                <button type="submit" id="delete-button">
-                    <i class="fas fa-trash-alt"></i>
-                    <h4>DELETE TASKS</h4>
+
+                <button type="submit" id="add-button">
+                    <i class="fas fa-plus-square"></i>
+                    <h4>ADD TASK</h4>
                 </button>
-            
-            </div>
-            <div id="tasks">
+        </form>
+        <!-- form2 for deletion  -->
+        <form action="/delete-card/?" method="GET">
+            <button type="submit" id="delete-button">
+                <i class="fas fa-trash-alt"></i>
+                <h4>DELETE TASKS</h4>
+            </button>
 
-                <%for(let i of toDoList){%>
-                <div class="cards">
-                    <div id="card-details1">
-                    <input type="checkbox" value="<%= i._id %>" name="check">
-                    <h4><%= i.description %></h4>
-                    <%if(i.category=="Work"){%>
-                    <p style="background-color: black;" id="category-display"><%=i.category%></p>
-                    <%}else if(i.category=="Personal"){%>
-                    <p style="background-color: teal;" id="category-display"><%=i.category%></p>
-                    <%}else if(i.category=="School"){%>
-                    <p style="background-color: rgb(196, 0, 0);" id="category-display"><%=i.category%></p>
-                    <%}else if(i.category=="Cleaning"){%>
-                    <p style="background-color: rgb(223, 145, 0);" id="category-display"><%=i.category%></p>
-                    <%}else{%>
-                    <p style="background-color: violet;" id="category-display"><%=i.category%></p>
-                    <%}%>
+    </div>
+    <!-- section where all cards/tasks/lists will be fetched -->
+    <div id="tasks">
 
-
-
+        <%for(let i of toDoList){%>
+        <div class="cards">
+            <div id="card-details1">
+                <input type="checkbox" value="<%= i._id %>" name="check" class="checkboxes" onclick="changeStyle()">
+                <h4><%= i.description %></h4>
+                <%if(i.category=="Work"){%>
+                <p style="background-color: black;" id="category-display"><%=i.category%></p>
+                <%}else if(i.category=="Personal"){%>
+                <p style="background-color: teal;" id="category-display"><%=i.category%></p>
+                <%}else if(i.category=="School"){%>
+                <p style="background-color: rgb(196, 0, 0);" id="category-display"><%=i.category%></p>
+                <%}else if(i.category=="Cleaning"){%>
+                <p style="background-color: rgb(223, 145, 0);" id="category-display"><%=i.category%></p>
+                <%}else{%>
+                <p style="background-color: violet;" id="category-display"><%=i.category%></p>
+                <%}%>
                     </div>
                     <div id="card-details2">
                         <i class="fas fa-calendar-alt"></i>
-                        <span><%= i.date %></span>
-                    </div>
-                </div>
-                <%}%>
+                        <span id="date-display"><%= i.date %></span>
+            </div>
+        </div>
+        <%}%>
             </div>
         </form>
             

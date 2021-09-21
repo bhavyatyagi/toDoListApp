@@ -1,26 +1,23 @@
-const mongoose=require('mongoose');
+const mongoose = require('mongoose');
 
 // creating a new Schema 
-const todolistSchema=new mongoose.Schema({
-    description:
-    {
+const todolistSchema = new mongoose.Schema({
+    description: {
         type: String,
         required: true
     },
-    category:
-    {
+    category: {
         type: String,
         required: true
     },
-    date:
-    {
+    date: {
         type: String,
         required: true
     }
 });
 
-// making an instance so that we can use it later 
-const ToDoList=mongoose.model('ToDoList',todolistSchema);
+// making an instance/model and letting mongoose know so that we can use it later 
+const ToDoList = mongoose.model('ToDoList', todolistSchema);
 
 // exporting
-module.exports=ToDoList;
+module.exports = ToDoList;
