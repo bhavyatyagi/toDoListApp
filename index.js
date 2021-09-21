@@ -112,5 +112,5 @@ app.listen(process.env.PORT || port, function (error) {
         console.log(`Error building server: ${error}`);
         return;
     }
-    console.log(`Server up and running at port ${port}`);
+    console.log(`Server up and running at port ${process.env.PORT || port}`);
 });
