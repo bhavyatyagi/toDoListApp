@@ -13,6 +13,8 @@ mongoose.connect(DB, {
     console.log('Succefully connected to DB');
 }).catch((err) => console.log('Unsuccesful in connected to DB'));
 
+
+// some new change
 //Acquire the connection to check if it is succesful
 // const db = mongoose.connection;
 
