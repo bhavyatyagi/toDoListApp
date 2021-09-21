@@ -69,7 +69,7 @@ app.post('/create-card', function (request, response) {
             console.log('Error in creating card in DB');
             return;
         }
-        console.log('*********', newList);
+        // console.log('*********', newList);
         return response.redirect('back');
     });
 });
