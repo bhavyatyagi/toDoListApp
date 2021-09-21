@@ -12,16 +12,7 @@ const port = 8080;
 
 //inbuilt node module doesnt require installation
 const path = require('path');
-const {
-    request
-} = require('http');
-const {
-    response
-} = require('express');
-const Contact = require('../contactListProject/models/contact');
-const {
-    isArray
-} = require('jquery');
+
 
 
 // Setting up views and view engine 
