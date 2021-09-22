@@ -65,13 +65,14 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
 ## Simple build for production
 
-    $ npm build 
-   
-
-## Heroku Deployment
- - Use the available methods at Heroku, I just used the CLI and this command to deploy
-    $ git add . 
-    $ git commit -am "make this better"
-    $ git push heroku master
+    $ npm build
     
-   -  This would require MongoAtlas.
+    
+## Simple build for production
+
+    $ git add .
+    $ git commit -am "make it better"
+    $ git push heroku master   
+    
+   - Use the available methods at Heroku, I just used the CLI and this command above to deploy.
+   - This would require MongoAtlas.
