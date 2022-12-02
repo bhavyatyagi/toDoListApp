@@ -2,8 +2,26 @@
 const express = require('express');
 var bodyParser = require('body-parser');
 // databse config 
+
+// Through MongoDB Atlas
 const db = require('./config/mongoose');
-const DB = 'mongodb+srv://bhavya2654:Bhavya@161201@cluster0.pffrg.mongodb.net/toDoList?retryWrites=true&w=majority';
+const DB = 'mongodb+srv://USERNAME:PASSWORD@cluster0.pffrg.mongodb.net/toDoList?retryWrites=true&w=majority';
+
+// Through MongoDB running Locallly
+// const mongoose = require('mongoose');
+// // databse config 
+// mongoose.connect('mongodb://localhost/todos-nodejs', {
+//     useNewUrlParser: true, useUnifiedTopology: true
+// });
+// const db = mongoose.connection;
+// console.log("DB connection started")
+// db.on('error', console.error.bind(console, "Error in connecting to mongoDB"));
+
+// db.once('open', function () {
+//     console.log('Connected to Database::MongoDB');
+
+// });
+
 const ToDoList = require('./models/toDoList');
 const app = express();
 
